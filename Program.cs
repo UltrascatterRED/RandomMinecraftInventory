@@ -8,8 +8,8 @@
 		{
 			// Initialize HTTP Client, request all JSON item objects from API, parse into list of Item objects
 			APIUtils.InitializeClient();
-			var testItem = ItemProcessor.LoadItem("https://minecraft-api.vercel.app/api/items");
-			List<Item> items = testItem.Result;
+			var itemsTask = ItemProcessor.LoadItem("https://minecraft-api.vercel.app/api/items");
+			List<Item> items = itemsTask.Result;
 			Inventory inventory = new Inventory();
 			bool exit = false;
 			while (!exit)
