@@ -2,9 +2,17 @@
 {
 	internal class Program
 	{
+		// https://minecraft-api.vercel.app/api/items?limit=1
 		static void Main(string[] args)
 		{
-			MainMenu();
+			APIUtils.InitializeClient();
+			var testItem = ItemProcessor.LoadItem("https://minecraft-api.vercel.app/api/items");
+			foreach (var item in testItem.Result)
+			{
+				Console.WriteLine(item.ToString());
+			}
+			
+			//MainMenu();
 		}
 		public static void MainMenu()
 		{
@@ -45,6 +53,6 @@
 			Console.Write(">>> ");
 		}
 		// public static Inventory GenerateInventory()
-		// public static void PromptAndValidateInput()
+		// public static bool PromptAndValidateInput()
 	}
 }
