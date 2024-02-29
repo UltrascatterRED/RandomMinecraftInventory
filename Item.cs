@@ -26,11 +26,13 @@
 		public override string ToString()
 		{
 			return
+				
 				Name + " (" + NamespacedId + ")\n" +
-				"------------------------------------------------\n" +
+				"--------------------------------------------------------------------\n" +
 				Description + "\n\n" + 
 				"Max Stack: " + StackSize + "\n" +
-				"Renewable: " + Renewable
+				"Renewable: " + Renewable + "\n" +
+				"--------------------------------------------------------------------\n"
 			;
 		}
 	}
